@@ -4,7 +4,7 @@ set (CMAKE_CXX_STANDARD 20)
 
 # Project's name
 
-project(nikrequest)
+project(nreq)
 # Set the output folder where your program will be created
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -18,13 +18,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 # The following folder will be included
 include_directories("${PROJECT_SOURCE_DIR}")
 
-add_library(nikrequest STATIC)
+add_library(nreq STATIC)
 
-target_sources(nikrequest PUBLIC
+target_sources(nreq PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/HttpRequest.cpp
 )
 
-target_include_directories(nikrequest PUBLIC
+target_include_directories(nreq PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
@@ -33,4 +33,4 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/lib/curlpp/)
 # You may want to add library's include directories since your code might use their header files. If libdependency is exporting its symbols properly you shouldn't have to do this though.
 target_include_directories(curlpp PUBLIC ${PROJECT_SOURCE_DIR}/lib/curlpp/include)
 
-target_link_libraries(nikrequest PUBLIC curlpp)
+target_link_libraries(nreq PUBLIC curlpp)
