@@ -1,4 +1,4 @@
-#include "HttpRequest.h"
+#include "nreq/HttpRequest.h"
 
 #include <sstream>
 
